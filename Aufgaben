@@ -1,0 +1,74 @@
+#1
+def count_integer(numbers,integer):
+    k = 0
+    for i in range(len(numbers)):
+        if numbers[i] == integer:
+            k = k + 1
+    if k == 0:
+        return 42
+    else:
+        return k
+
+numbers = [1,2,7,5,4,9,4]
+integer = 4
+output = count_integer(numbers,integer)
+print(output)
+
+#2
+def list_func(numbers, integer):
+    if integer not in numbers:
+        numbers.clear()
+        return numbers
+    for i in range(len(numbers)):
+        if numbers[i] == integer:
+            numbers[i] = 6
+    list1 = numbers.copy()
+    list1.reverse()
+    print(list1)
+    return numbers
+
+#3
+def compare_lists(list1,list2):
+    my_list = []
+    for item in list1:
+        if item in list2:
+            my_list.append(item)
+    return my_list
+
+list1 = [1,2,7,5,4,9]
+list2 = [3,1,5,4,8,6]
+output = compare_lists(list1,list2)
+print(output)
+
+#4
+def remove_duplicates(list):
+    resultList = []
+    for element in list:
+        if element not in resultList:
+            resultList.append(element)
+    return resultList
+
+value = [5,1,2,3,9,4,2,9]
+output = remove_duplicates(value)
+print(output)
+
+#5
+def dict_func(dict):
+    try:
+        t=dict['Type']
+    except:
+        t="unknown type"
+    try:
+        b=dict['Brand']
+    except:
+        b="unknown brand"
+    try:
+        p=dict['Price']
+    except:
+        p="unknown price"
+
+    print("You have a ",t,"from",b,"that costs:",p)
+    
+
+value={'Type':'Notebook','Brand':'Dell','Price':2000}
+output =dict_func(value)
